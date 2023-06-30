@@ -15,16 +15,12 @@ struct ListNode {
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        // 都是空返回空节点
-        if (nullptr == list1 && nullptr == list2) {
-            return list1;
-        }
-        // 一个为空则返回不为空的列表
-        if (nullptr != list1 && nullptr == list2) {
-            return list1;
-        }
-        if (nullptr == list1 && nullptr != list2) {
+        if( nullptr == list1){
             return list2;
+        }
+ 
+        if( nullptr == list2){
+            return list1;
         }
 
         // l1 头节点不大于 l2 头结点
